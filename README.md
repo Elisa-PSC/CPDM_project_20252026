@@ -2,13 +2,13 @@
 
 ## Overview
 
-This project investigates the following question: **Do richer countries impose lower tariffs than poorer countries?** 
+This project investigates the following question: *do richer countries impose lower tariffs than poorer countries?*
 </br> 
-Using comprehensive data from the World Bank's World Integrated Trade Solution (WITS) database spanning 2018-2022, we perform rigorous statistical analysis to understand the relationship between national wealth (GDP) and tariff policy.
+Using comprehensive data from the World Bank's World Integrated Trade Solution (WITS) database spanning 2000-2022, we perform rigorous statistical analysis to understand the relationship between national wealth (GDP) and tariff policy.
 
 ## Research Question
 
-**Primary Question:** Is there a significant relationship between a country's GDP and its tariff rates?
+**Primary Question:** is there a significant relationship between a country's GDP and its tariff rates?
 
 **Key Hypotheses:**
 - $H_0$ (Null): There is no significant relationship between national wealth and tariff rates
@@ -18,10 +18,10 @@ Using comprehensive data from the World Bank's World Integrated Trade Solution (
 
 Our analysis reveals strong empirical evidence for the wealth-tariff relationship:
 
-- **The Wealth-Tariff Gap:** Poorest 25% of countries maintain average tariffs of 8.89%, while the richest 25% average only 3.28%—a difference of 5.61 percentage points (171% higher)
-- **Statistical Significance:** Correlation coefficient of -0.347 (p < 0.001) demonstrates a significant negative relationship
-- **Explanatory Power:** GDP alone explains 12.1% of tariff variation ($R^2$ = 0.121), which is substantial in economic analysis
-- **Temporal Consistency:** The pattern persisted consistently from 2018 to 2022, indicating a structural rather than temporary phenomenon
+- **The Wealth-Tariff Gap:** poorest 25% of countries maintain average tariffs of 10.40%, while the richest 25% average only 3.65% — a difference of 6.74 percentage points (184.5% higher);
+- **Statistical Significance:** correlation coefficient of -0.3284 ($p$ < 0.001) demonstrates a significant negative relationship;
+- **Explanatory Power:** GDP alone explains 10.8% of tariff variation ($R^2$ = 0.1079), which is substantial in economic analysis;
+- **Temporal Consistency:** the pattern persisted consistently from 2000 to 2022, indicating a structural rather than temporary phenomenon.
 
 ## Dataset
 
@@ -30,68 +30,53 @@ All data obtained from the World Bank's World Integrated Trade Solution (WITS):
 - **Source URL:** https://wits.worldbank.org/
 
 ### Files Required
-1. `WITS-Product_bycountry_18-22.csv` - Tariff rates by country and year
-2. `WITS-Country-GDP_USD.csv` - GDP data in USD
-3. `WITS-Trade_percentage_of_GDP.csv` - Trade openness metrics
-4. `WITS-Product_import_tariffs.csv` - Detailed product-level tariff data
+1. `WITS-Product_bycountry_all.csv` - Tariff rates by country and year
+2. `WITS-Country-GDP_USD_all.csv` - GDP data in USD
+3. `WITS-Trade_percentage_of_GDP_all.csv` - Trade openness metrics
 
 ### Data Coverage
-- **Time Period:** 2018-2022 (5 years)
+- **Time Period:** 2000-2022 (23 years)
 - **Countries:** 150+ nations across all income levels
 - **Observations:** 10,000+ country-year pairs
 
 ## Methodology
-
 ### Statistical Techniques
 
-1. **Descriptive Statistics**
-   - Central tendency measures (mean, median)
-   - Dispersion analysis (standard deviation, range)
-   - Temporal trend analysis
+1. **Descriptive Statistics** </br>
+   We summarized the data using measures of central tendency (mean and median) and dispersion (standard deviation and range), while also examining temporal trends over time.
 
-2. **Correlation Analysis**
-   - Pearson correlation coefficients
-   - Logarithmic transformation for GDP normalization
-   - Trade openness correlation assessment
+2. **Correlation Analysis** </br>
+   Relationships between variables were assessed using Pearson correlation coefficients. GDP values were log-transformed to normalize the distribution, and correlations with trade openness were specifically evaluated.
 
-3. **Regression Analysis**
-   - Linear regression: Tariff Rate ~ $\text{log}_{10}$(GDP)
-   - $R^2$ calculation for explanatory power
-   - Statistical significance testing (p-values)
+3. **Regression Analysis** </br>
+   Linear regression models were fitted to explore the relationship between tariff rates and log-transformed GDP ( $\text{Tariff Rate} \sim \log_{10}(\text{GDP})$ ). Model fit was evaluated using $R^2$, and statistical significance was tested through p-values.
 
-4. **Hypothesis Testing**
-   - Two-sample t-tests (poorest vs. richest quartiles)
-   - Trade openness comparison tests
-   - Significance level: $\alpha$ = 0.05
+4. **Hypothesis Testing** </br>
+   Differences between groups were tested using two-sample t-tests, focusing on the poorest versus richest quartiles and variations in trade openness. All tests used a significance threshold of $\alpha = 0.05$.
 
-5. **Exploratory Data Analysis**
-   - Wealth quartile segmentation
-   - Outlier identification (z-scores)
-   - Volatility analysis across countries
-   - Geographic visualization
+5. **Exploratory Data Analysis** </br>
+   The dataset was further explored by segmenting countries into wealth quartiles, identifying outliers via z-scores, analyzing volatility across nations, and visualizing geographic patterns.
 
 ### Key Variables
 
-- **Dependent Variable:** Average applied tariff rate (%)
+- **Dependent Variable:** Average applied tariff rate (%);
 - **Independent Variables:**
-  - GDP (USD) - raw and log-transformed
-  - Wealth quartiles (categorical)
-  - Trade as % of GDP (openness measure)
+  - GDP (USD) (raw and log-transformed);
+  - Wealth quartiles (categorical);
+  - Trade as % of GDP (openness measure).
 
 ## Project Structure
 
 ```
 tariff-wealth-analysis/
 │
-├── collab_reviewed_version.ipynb    # Main analysis script
-├── README.md                        # This file
-├── requirements.txt                 # Python dependencies
+├── collab_file_name.ipynb          # Main analysis script
+├── README.md                       # This file
 │
 ├── data/                           # Data directory
-│   ├── WITS-Product_bycountry_18-22.csv
-│   ├── WITS-Country-GDP_USD.csv
-│   ├── WITS-Trade_percentage_of_GDP.csv
-│   └── WITS-Product_import_tariffs.csv
+│   ├── WITS-Product_bycountry_all.csv
+│   ├── WITS-Country-GDP_USD_all.csv
+│   └── WITS-Trade_percentage_of_GDP_all.csv
 │
 ├── figures/                        # Generated visualizations
 │   ├── fig1_gdp_tariff_scatter.png
@@ -102,16 +87,12 @@ tariff-wealth-analysis/
 └── LICENSE                         # MIT License
 ```
 
-## Visualizations
+## Visualizations [to be modified]
 
 The analysis generates several key visualizations:
 
 1. **Scatter Plot with Regression Line** - GDP vs. Tariff Rate relationship
-2. **Wealth Quartile Bar Chart** - Average tariffs by income group
-3. **Interactive Choropleth Map** - Global tariff rate distribution
-4. **Time Series Comparison** - Temporal trends for poorest vs. richest countries
-5. **Box Plot Analysis** - Trade openness comparison
-6. .....
+2. .....
 
 ## Authors
 
