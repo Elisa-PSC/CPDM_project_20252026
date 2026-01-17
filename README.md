@@ -79,10 +79,14 @@ tariff-wealth-analysis/
 │   └── WITS-Trade_percentage_of_GDP_all.csv
 │
 ├── figures/                        # Generated visualizations
-│   ├── fig1_gdp_tariff_scatter.png
-│   ├── fig2_wealth_quartile_bars.png
-│   └── fig3_trade_openness_boxplot.png
-│   └── ...
+│   ├── fig_evolution_by_wealth.png
+│   ├── fig_map.png
+│   ├── fig_top_10_bottom.png
+│   ├── fig_wealth_quartile_bars.png
+│   ├── fig_avg_tariff_years.png
+│   ├── fig_gdp_tariff_scatter.png
+│   ├── fig_trade_openness_boxplot.png
+│   └── fig_trade_openness_boxplot_no_extreme.png
 │
 └── LICENSE                         # MIT License
 ```
