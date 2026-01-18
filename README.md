@@ -107,8 +107,8 @@ The analysis generates eight key visualizations:
 ## Authors
 
 - Alessia Barel
-- Ceren Özgür
 - Matteo Naccari
+- Ceren Özgür
 - Elisa Pascon
 
 ## License
