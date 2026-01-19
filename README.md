@@ -90,7 +90,7 @@ tariff-wealth-analysis/
 │   ├── fig_trade_openness_boxplot.png
 │   └── fig_trade_openness_boxplot_no_extreme.png
 │
-└── LICENSE                         # MIT License
+└── LICENSE                                                        # MIT License
 ```
 
 ## Visualizations
